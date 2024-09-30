@@ -23,7 +23,7 @@ app.post("/webhook", async (req, res) => {
 
       // Envoyer les données de la session à Bubble ou un autre backend
       await axios.post(
-        "https://pitchmybook.bubbleapps.io/version-test/api/1.1/wf/checkout-session",
+        "https://pitchmybook.bubbleapps.io/version-test/api/1.1/wf/checkout-session/initialize",
         {
           session_id: session.id,
           customer_email: session.customer_email,
@@ -41,7 +41,7 @@ app.post("/webhook", async (req, res) => {
 
       // Envoyer les données de l'abonnement à Bubble ou un autre backend
       await axios.post(
-        "https://pitchmybook.bubbleapps.io/version-test/api/1.1/wf/subscription-updated",
+        "https://pitchmybook.bubbleapps.io/version-test/api/1.1/wf/subscription-updated/initialize",
         {
           subscription_id: subscription.id,
           status: subscription.status,
